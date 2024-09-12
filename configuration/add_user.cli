@@ -1,0 +1,6 @@
+cd /settings/local_accounts/
+add
+set username="myuser"
+set password="DONOTUSE!"
+set user_group="admin"
+commit

@@ -1,0 +1,4 @@
+cd /settings/license/
+add
+set license_key={{ docker_license_key }}
+commit

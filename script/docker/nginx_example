@@ -1,0 +1,10 @@
+#!/bin/bash
+#Stop and delete any existing nginx_example containers
+docker stop nginx_example
+docker rm nginx_example
+
+#Copy index.html from ZPE Cloud Extended Storage
+rclone copyto /var/local/file_manager/remote_file_system/extended_storage/Shared/nginx/index.html /var/local/file_manager/remote_file_system/extended_storage/admin_group/index.html --config /var/zpe-cloud/extended-storage/.config/rclone.config
+
+#Start Docker Container
+docker run --name nginx_example -v /var/local/file_manager/remote_file_system/extended_storage/admin_group:/usr/share/nginx/html:ro -p 8080:80 -d nginx

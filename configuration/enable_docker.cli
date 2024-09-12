@@ -1,0 +1,3 @@
+cd /settings/services/
+set enable_docker=yes
+commit
